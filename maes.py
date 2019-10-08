@@ -24,7 +24,3 @@ for folder in folders:
         copyfile(src, dest_file)
 
         print(src, '-->', dest_file)
-
-
-
-
