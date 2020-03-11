@@ -2,16 +2,23 @@ def largest_sum_congtiguous_sub_array(arr):
     sub_array = []
     for i in range(len(arr)):
         temp_array = [arr[i]]
+        negative_values = []
 
         for j in range(i+1, len(arr)):
-            if (sum(temp_array) < sum(temp_array) + arr[j]) and sum(temp_array) + arr[j] > sum(sub_array):
-                temp_array.append(arr[j])
+            if max(sum(temp_array), sum(temp_array) + arr[j]) == sum(temp_array):
+                # arr[j] is negative
+                negative_values.append(arr[j])
+            else:
+                if sum(negative_values) + sum(temp_array) + arr[j] > sum(temp_array):
+                    # add all negative values first
+                    for negative_value in negative_values:
+                        temp_array.append(negative_value)
+                    temp_array.append(arr[j])
+                else:
+                    negative_values.append(arr[j])
 
             if sum(temp_array) > sum(sub_array):
                 sub_array = temp_array
-
-            else:
-                break
 
     return sub_array
 
