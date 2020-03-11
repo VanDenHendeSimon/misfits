@@ -7,12 +7,14 @@ def largest_sum_congtiguous_sub_array(arr):
         for j in range(i+1, len(arr)):
             if sum(temp_array) > sum(temp_array) + arr[j]:
                 negative_values.append(arr[j])
+
             else:
                 if sum(negative_values) + sum(temp_array) + arr[j] > sum(temp_array):
                     # add all negative values first
                     for negative_value in negative_values:
                         temp_array.append(negative_value)
                     temp_array.append(arr[j])
+
                 else:
                     negative_values.append(arr[j])
 
