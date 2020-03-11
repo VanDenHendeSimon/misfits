@@ -17,8 +17,8 @@ def largest_sum_congtiguous_sub_array(arr):
                 else:
                     negative_values.append(arr[j])
 
-            if sum(temp_array) > sum(sub_array):
-                sub_array = temp_array
+        if sum(temp_array) > sum(sub_array):
+            sub_array = temp_array
 
     return sub_array
 
