@@ -30,7 +30,7 @@ _img2 = [
 
 rotated_img = rotate_image(_img)
 
-print("Before")
+print("before")
 print(_img)
-print("After")
+print("after")
 print(rotated_img)
